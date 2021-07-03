@@ -85,10 +85,15 @@ var nodemailer = require('nodemailer');
 
 var transporter = nodemailer.createTransport({
   service: 'Gmail',
+  secure: true,
   auth: {
     user: "kunal.chandra1900@gmail.com",
     pass: "kunnubhai@19"
   },
+  tls: {
+        // do not fail on invalid certs
+        rejectUnauthorized: false
+    }
 });
 
 var mailOptions = {
