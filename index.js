@@ -81,35 +81,7 @@ io.on('connection', socket =>{
 })
 
 // ===============================Email service================
-var nodemailer = require('nodemailer');
 
-var transporter = nodemailer.createTransport({
-  service: 'Gmail',
-  secure: true,
-  auth: {
-    user: "kunal.chandra1900@gmail.com",
-    pass: "kunnubhai@19"
-  },
-  tls: {
-        // do not fail on invalid certs
-        rejectUnauthorized: false
-    }
-});
-
-var mailOptions = {
-  from: 'kunal.chandra1900@gmail.com',
-  to: 'kunal.chandra1906@gmail.com',
-  subject: 'Sending Email using Node.js',
-  text: 'That was easy!'
-};
-
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
 
 // ============================================================
 
